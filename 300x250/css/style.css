@@ -1,0 +1,324 @@
+@font-face {
+    font-family: 'Value Sans Pro';
+    src: url('../font/ValueSansPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Value Sans Pro';
+    src: url('../font/ValueSansPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Value Sans Pro', system-ui, -apple-system, sans-serif;
+}
+
+#banner_container {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid red;
+}
+
+.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 250px;
+}
+
+.text {
+    font-family: 'Value Sans Pro', sans-serif;
+    font-weight: bold;
+}
+
+/* Frame 1: Ticker */
+.frame_1 {
+    background-color: #242f56;
+    background-image: url('../img/Fondo.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticker_wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.ticker_list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display:flex;
+    flex-direction: column;
+    padding: 4px;
+}
+
+.ticker_item {
+    color: #ffffff;
+    font-size: 2.08rem;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: -0.04rem;
+    line-height: 1.05;
+}
+
+/* Frame 2: Circle */
+.frame_2 {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Initial scale set in CSS for first paint; GSAP animates scale from 0 */
+.circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transform: scale(0);
+    will-change: transform;
+}
+
+/* Frame 3: Text lines (visibility controlled by GSAP autoAlpha) */
+.frame_3 {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame_3_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 1.9rem;
+}
+
+.line_wrap {
+    position: absolute;
+    left: 1.2rem;
+    transform: translateY(-50%);
+}
+
+.line_wrap_1 { top: 21%; }
+.line_wrap_2 { top: 34%; }
+.line_wrap_3 { top: 47%; }
+
+/* Text styles */
+.line {
+    position: relative;
+    white-space: nowrap;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02rem;
+    will-change: transform;
+}
+
+.blue_text {
+    color: #110081;
+}
+
+.green_text {
+    color: #3cc554;
+}
+
+.white_text {
+    color: #ffffff;
+}
+
+/* Frame 3 Refinement (frame_4): Fondo bg (visibility controlled by GSAP autoAlpha) */
+.frame_4 {
+    background-color: #242f56;
+    background-image: url('../img/Fondo.png');
+    background-size: cover;
+    pointer-events: none;
+}
+
+.frame_4_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1.5rem 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.frame_4 .line_wrap {
+    position: absolute;
+    left: 1.3rem;
+    transform: translateY(-50%);
+}
+
+.frame_4 #f4_l1 { top: 20%; }
+.frame_4 #f4_l2 { top: 33%; }
+.frame_4 #f4_l3 { top: 46%; }
+.frame_4 #f4_l4 { top: 59%; }
+.frame_4 #f4_l5 { top: 72%; }
+
+
+
+/* Frame 4 (frame_5): White + Cigna logo bottom-right (visibility controlled by GSAP autoAlpha) */
+.frame_5 {
+    background-color: #ffffff;
+    pointer-events: none;
+}
+
+.frame_5_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1.5rem 1.5rem 4rem;
+}
+
+.frame_5 .line_wrap {
+    position: absolute;
+    left: 1.4rem;
+    transform: translateY(-50%);
+}
+
+.frame_5 #f5_l1 { top: 20%; }
+.frame_5 #f5_l2 { top: 33%; }
+.frame_5 #f5_l3 { top: 46%; }
+.frame_5 #f5_l4 { top: 59%; }
+
+
+
+.frame_5_logo {
+    position: absolute;
+    right: 1.2rem;
+    bottom: 0.80rem;
+}
+
+.frame_5_logo img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+/* Frame 5 (frame_6): Background man + main logo + bottom content (visibility controlled by GSAP autoAlpha) */
+.frame_6 {
+    background-image: url('../img/Background_man.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none;
+}
+
+.frame_6_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.theVisibilityGap_logo {
+    position: absolute;
+    left: 1.2rem;
+    top: 3rem;
+    max-width: 55%;
+    z-index: 1;
+}
+
+.theVisibilityGap_logo img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bottom_content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.80rem 1.2rem 0.80rem 1.00rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.bottom_content .left_side {
+    width: 100%;
+
+}
+.bottom_content .right_side {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bottom_text {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    position: absolute;
+    top: 33%;
+}
+.hosted_by {
+    font-weight: 400;
+}
+.cigna_logo {
+    width: 76px;
+    height: 42px;
+}
+
+.cigna_logo  img {
+    width: auto;
+    object-fit: contain;
+}
+
+
+.btn_cta {
+    display: inline-block;
+    padding: 0.55rem 0.5rem;
+    background-color: #ffffff;
+    color: #0033ff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 999px;
+    white-space: nowrap;
+    letter-spacing: -0.02rem;
+
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ad.size" content="width=300,height=250">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Banner 300x250 - The Visibility Gap</title>
+</head>
+<body>
+    <div id="banner_container">
+        <!-- Frame 1: Ticker -->
+        <div class="frame frame_1" id="frame_1">
+            <div class="ticker_wrap">
+                <div class="ticker_list" id="ticker_list">
+                    
+                </div>
+            </div>
+        </div>
+        <!--Transition: Circle transition -->
+        <div class="frame frame_2" id="frame_2">
+            <div class="circle" id="circle"></div>
+        </div>
+        <!-- Frame 2 -->
+        <div class="frame frame_3" id="frame_3">
+            <div class="frame_3_content">
+                <div class="line_wrap line_wrap_1 blue_text"><p class="line text" id="line_1">join us for</p></div>
+                <div class="line_wrap line_wrap_2 blue_text"><p class="line text" id="line_2">season three of</p></div>
+                <div class="line_wrap line_wrap_3 green_text"><p class="line text" id="line_3">The Visibility Gap</p></div>
+            </div>
+        </div>
+        <!-- Frame 3 Refinement: Fondo + podcast text -->
+        <div class="frame frame_4" id="frame_4">
+            <div class="frame_4_content">
+                <div class="line_wrap white_text" id="f4_l1"><p class="line text">a podcast</p></div>
+                <div class="line_wrap white_text" id="f4_l2"><p class="line text">covering topics</p></div>
+                <div class="line_wrap white_text" id="f4_l3"><p class="line text">like <span class="green_text">work</span></p></div>
+                <div class="line_wrap green_text" id="f4_l4"><p class="line text">and financial</p></div>
+                <div class="line_wrap green_text" id="f4_l5"><p class="line text">pressure</p></div>
+            </div>
+        </div>
+        <!-- Frame 4: White + green lines + Cigna logo -->
+        <div class="frame frame_5" id="frame_5">
+            <div class="frame_5_content">
+                <div class="line_wrap green_text" id="f5_l1"><p class="line text">relationships,</p></div>
+                <div class="line_wrap green_text" id="f5_l2"><p class="line text">coping habits,</p></div>
+                <div class="line_wrap green_text" id="f5_l3"><p class="line text">depression,</p></div>
+                <div class="line_wrap green_text" id="f5_l4"><p class="line text">and more</p></div>
+            </div>
+            <div class="frame_5_logo cigna_logo" id="f5_cigna"><img src="img/Cigna_logo.png" alt="Cigna"></div>
+        </div>
+        <!-- Frame 5: Background man + main logo + bottom content -->
+        <div class="frame frame_6" id="frame_6">
+            <div class="frame_6_content">
+                <div class="theVisibilityGap_logo" id="f6_main_logo"><img src="img/The_visibility_gap_logo.png" alt="The Visibility Gap"></div>
+                <div class="bottom_content" id="f6_bottom">
+                    <div class="left_side">
+                        <p class="bottom_text" id="f6_bottom_text">Men's Mental Health<br><span class="hosted_by">Hosted by</span> Dr. Guy Winch</p>
+                        <!-- clickTag: ad server typically sets window.clickTag; CTA href set in main.js -->
+                        <a href="#" class="btn_cta" id="f7_cta" target="_blank" rel="noopener">Listen now</a>
+                    </div>
+                    <div class="right_side">
+                        <div class="cigna_logo_white cigna_logo" id="f6_cigna_white"><img src="img/Cigna_white_logo.png" alt="Cigna"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
